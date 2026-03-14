@@ -51,6 +51,9 @@ serve(async (req) => {
 
       if (!res.ok) {
         const err = await res.text();
+        if (res.status === 400 && err.includes("credit balance is too low")) {
+          throw new Error("Anthropic API credits depleted. Please add credits at console.anthropic.com");
+        }
         throw new Error(`Claude API error [${res.status}]: ${err}`);
       }
 
