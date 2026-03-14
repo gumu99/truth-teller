@@ -1,1 +1,7 @@
 project_id = "vmcsdrdyarbaagwexwbb"
+
+[functions.expose]
+verify_jwt = false
+
+[functions.comeback]
+verify_jwt = false
