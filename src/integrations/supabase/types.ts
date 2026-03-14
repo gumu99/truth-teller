@@ -14,7 +14,135 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      comeback_queue: {
+        Row: {
+          comeback: string | null
+          created_at: string
+          detected_tone: string | null
+          id: string
+          sent_at: string | null
+          status: string
+          style_used: string | null
+          target_username: string | null
+          their_reply_text: string
+        }
+        Insert: {
+          comeback?: string | null
+          created_at?: string
+          detected_tone?: string | null
+          id?: string
+          sent_at?: string | null
+          status?: string
+          style_used?: string | null
+          target_username?: string | null
+          their_reply_text: string
+        }
+        Update: {
+          comeback?: string | null
+          created_at?: string
+          detected_tone?: string | null
+          id?: string
+          sent_at?: string | null
+          status?: string
+          style_used?: string | null
+          target_username?: string | null
+          their_reply_text?: string
+        }
+        Relationships: []
+      }
+      expose_queue: {
+        Row: {
+          claim: string
+          created_at: string
+          evidence: string | null
+          facts: string | null
+          full_reply: string | null
+          hook: string | null
+          id: string
+          mode: string | null
+          niche: string | null
+          post_url: string | null
+          profession: string | null
+          sent_at: string | null
+          status: string
+          style_used: string | null
+          target_username: string
+          witness_username: string | null
+        }
+        Insert: {
+          claim: string
+          created_at?: string
+          evidence?: string | null
+          facts?: string | null
+          full_reply?: string | null
+          hook?: string | null
+          id?: string
+          mode?: string | null
+          niche?: string | null
+          post_url?: string | null
+          profession?: string | null
+          sent_at?: string | null
+          status?: string
+          style_used?: string | null
+          target_username: string
+          witness_username?: string | null
+        }
+        Update: {
+          claim?: string
+          created_at?: string
+          evidence?: string | null
+          facts?: string | null
+          full_reply?: string | null
+          hook?: string | null
+          id?: string
+          mode?: string | null
+          niche?: string | null
+          post_url?: string | null
+          profession?: string | null
+          sent_at?: string | null
+          status?: string
+          style_used?: string | null
+          target_username?: string
+          witness_username?: string | null
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          followers: string | null
+          id: string
+          niche: string | null
+          profession: string | null
+          scanned_at: string | null
+          self_claims: Json | null
+          tone: string | null
+          username: string
+        }
+        Insert: {
+          created_at?: string
+          followers?: string | null
+          id?: string
+          niche?: string | null
+          profession?: string | null
+          scanned_at?: string | null
+          self_claims?: Json | null
+          tone?: string | null
+          username: string
+        }
+        Update: {
+          created_at?: string
+          followers?: string | null
+          id?: string
+          niche?: string | null
+          profession?: string | null
+          scanned_at?: string | null
+          self_claims?: Json | null
+          tone?: string | null
+          username?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
